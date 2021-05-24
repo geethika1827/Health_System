@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="icon" href="PurpleLogoPng.png" />
+<title>WeCare</title>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="Register.css" />
+</head>
+<body>
+	<section class="register">
+		<div class="nav-container">
+			<nav>
+				<span><img id="logo" src="PurpleLogoPng.png" alt="WeCare" />
+					<h1>WeCare</h1> </span>
+
+				<ul>
+					<li><a href="HomePage.html">Home</a></li>
+					<li><a href="Dashoboard">Dashboard</a></li>
+					<li><a href="Login.html"><button type="submit">Login</button></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="register-content">
+			<div class="doc-container">
+				<h1>Register as a Doctor</h1>
+				<p>
+					Register as a Doctor to accept appointments from patients and earn
+					money right from where you are. <br> <br> 
+					<span> Note: Only certified/verified doctors are allowed to register</span>
+				</p>
+				<button class="reg-as-doc" id="reg-as">Register as a Doctor</button>
+				<div class="doc-img">
+					<img src="RegisterDoc.svg" alt="Doctor" />
+				</div>
+			</div>
+			
+			<!-- <div class="or"><h1>OR</h1></div> -->
+			
+			<div class="user-container">
+				<h1>Register as an user</h1>
+				<p>
+					Register as an User book your appointment with your favorite doctor
+					of your choice, without needing to leave your Home. <br> <br>
+					<span> Note: Your Identity proof will be required</span>
+				</p>
+				<button class="reg-as-user" id="reg-as">Register as an User</button>
+				<div class="user-img">
+					<img src="RegisterUser.svg" alt="Doctor" />
+				</div>
+			</div>
+		</div>
+
+		<div class="doc-modal-bg">
+			<div class="doc-modal">
+				<a class="close"><img src="closeIcon.webp" alt="Close" /></a>
+				<form onSubmit="return doctor_validation()" name="f1" action="Servlet_1" method="post">
+					<div class="title">
+						<h1>Register as a Doctor</h1>
+					</div>
+					<div class="form-Element">
+						<label>License No :</label> 
+						<input type="text" name="license_no" placeholder="Enter License Number" required/>
+					</div>
+					<div class="form-Element">
+						<label>Your Name :</label> 
+						<input type="text" name="doctor_name" placeholder="Enter Your Name" required/>
+					</div>
+					<div class="form-Element">
+						<label>Email ID :</label> 
+						<input type="email" name="email_id" placeholder="Enter Email Id" required/>
+					</div>
+					<div class="form-Element">
+						<label>Password :</label> 
+						<input type="password" name="password" placeholder="Enter Password" required/>
+					</div>
+					<div class="form-Element">
+						<label>Phone Number :</label> 
+						<input type="text" name="phone_no" placeholder="Enter Phone no." required/>
+					</div>
+
+					<button class="register-button">Register</button>
+					<a href="Login.html">Already have an Account? Login</a>
+				</form>
+			</div>
+		</div>
+
+		<div class="user-modal-bg">
+			<div class="user-modal">
+				<a class="close_user"><img src="closeIcon.webp" alt="Close" /></a>
+				<form onsubmit="return user_validation()" name="f2" action="Servlet_2" method="post">
+					<div class="title">
+						<h1>Register as an User</h1>
+					</div>
+					<div class="form-Element">
+						<label>Adhaar No :</label> 
+						<input type="text" name="aadhar_no" placeholder="Enter Adhaar Number" required/>
+					</div>
+					<div class="form-Element">
+						<label>Your Name :</label> 
+						<input type="text" name="user_name" placeholder="Enter Your Name" required/>
+					</div>
+					<div class="form-Element">
+						<label>Email ID :</label> 
+						<input type="email" name="email_id" placeholder="Enter Email Id" required/>
+					</div>
+					<div class="form-Element">
+						<label>Password :</label> 
+						<input type="password" name="password" placeholder="Enter Password" required/>
+					</div>
+					<div class="form-Element">
+						<label>Phone Number :</label> 
+						<input type="text" name="phone_no" placeholder="Enter Phone no." required/>
+					</div>
+
+					<button class="register-button">Register</button>
+					<a href="Login.html">Already have an Account? Login</a>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+
+<script>
+	var docRegButton = document.querySelector('.reg-as-doc');
+	var userRegButton = document.querySelector('.reg-as-user');
+	var docBg = document.querySelector('.doc-modal-bg');
+	var userBg = document.querySelector('.user-modal-bg');
+	var modalClose = document.querySelector('.close');
+	var usermodalClose = document.querySelector('.close_user');
+
+	docRegButton.addEventListener('click', function() {
+		docBg.classList.add('modal-active');
+	});
+
+	modalClose.addEventListener('click', function() {
+		docBg.classList.remove('modal-active');
+	});
+
+	userRegButton.addEventListener('click', function() {
+		userBg.classList.add('modal-active');
+	});
+
+	usermodalClose.addEventListener('click', function() {
+		userBg.classList.remove('modal-active');
+	});
+
+function doctor_validation() {	
+	var license_no = document.f1.license_no.value;
+    var doctor_name = document.f1.doctor_name.value;
+    var email_id = document.f1.email_id .value;
+    var password = document.f1.password.value;
+    var phone_no = document.f1.phone_no.value;
+
+    
+    if(license_no.length < 7 || license_no.length > 7) {
+    	alert("Please Enter a Valid License no. of 7 digit");
+    	return false;
+    }
+    else if (doctor_name.length < 8) {
+      	alert("Name Should have Minimum of 8 Characters");
+      	return false;
+    } 
+    else if (email_id.length < 10) {
+      	alert("Email Should have Minimum of 10 Characters");
+      	return false;
+    } 
+    else if (!email_id.includes("@") || !email_id.includes(".com")) {
+      	alert("Invalid Email id, must contain @ and .com");
+      	return false;
+    }
+    else if (!password.includes("@") || !password.includes("#")) {
+      	alert("Password not Strong Enough Use @ and #");
+      	return false;
+    }
+    else if (phone_no.length < 10 || phone_no.length > 10) {  
+    	alert("Please Enter a Valid Phone no.");
+        return false;
+    }
+ }
+function user_validation() {	
+	var aadhar_no = document.f2.aadhar_no.value;
+    var user_name = document.f2.user_name.value;
+    var email_id = document.f2.email_id .value;
+    var password = document.f2.password.value;
+    var phone_no = document.f2.phone_no.value;
+
+    if (aadhar_no.length < 7 || aadhar_no.length > 7) {
+      	alert("Please Enter a Valid 7 Digit Aadhar Number");
+      	return false;
+    }
+    else if (user_name.length < 8) {
+      	alert("Name Should have Minimum of 8 Characters");
+      	return false;
+    } 
+    else if (email_id.length < 10) {
+      	alert("Email Should have Minimum of 10 Characters");
+      	return false;
+    } 
+    else if (!email_id.includes("@") || !email_id.includes(".com")) {
+      	alert("Invalid Email id must contain @ and .com")
+      	return false;
+    }
+    else if (!password.includes("@") || !password.includes("#")) {
+      	alert("Password not Strong Enough Use @ or #")
+      	return false;
+    }
+    else if (phone_no.length < 10 || phone_no.length > 10) {  
+    	alert("Please Enter a Valid Phone no.");
+        return false;
+    } 
+ }
+</script>
+</html>

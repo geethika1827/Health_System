@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="../Images/PurpleLogoPng.png" />
+<title>WeCare</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" href="Admin.css" />
+</head>
+<body>
+	<section class="container">
+		<div class="nav-container">
+			<nav>
+				<span> <img id="logo" src="PurpleLogoPng.png" alt="WeCare" />
+					<a href="HomePage.html"><h1>WeCare</h1></a>
+				</span>
+
+				<ul>
+					<li><a href="HomePage.html" class="active">Home</a></li>
+					<li><a href="Dashboard.html">Dashboard</a></li>
+					<li><a class="trans-button" href="Register.html"><button
+								type="button">Register</button></a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="login-container">
+			<div class="left-img">
+				<img src="AdminLeftImg.svg" alt="" />
+			</div>
+			<div class="login-content">
+				<form name="f3" action="Servlet_4" method="post"
+					onsubmit="return admin_validation">
+					<div class="title">
+						<h1>Login as Admin</h1>
+					</div>
+					<div class="username">
+						<label>Username</label> <input type="text" name="admin_user"
+							placeholder="Username" />
+					</div>
+					<div class="pass">
+						<label>Password</label> <input type="password" name="password"
+							placeholder="Password" />
+					</div>
+					<div>
+						<button class="butt" type="submit" value="Login">Login</button>
+					</div>
+				</form>
+			</div>
+			<div class="right-img">
+				<img src="AdminRightImg.svg" alt="" />
+			</div>
+		</div>
+	</section>
+	<script>
+	function admin_validation() {  
+		  
+	    var admin_user = document.f3.admin_user.value;
+	    var password = document.f3.password.value;
+
+	    if (admin_user == null || admin_user == "") {
+	        alert("Invalid Admin Username");
+	        return false;
+	    }
+	    else if (password == null || password == "") {
+	        alert("Invalid Admin Password");
+	        return false;
+	    }
+	 }
+	</script>
+	<!-- GSAP-->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+		integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+            gsap.from('.left-img', 3, {
+                x: -460,
+                ease: Expo.easeInOut,
+            });
+            gsap.from('.right-img', 3, {
+                x: 460,
+                ease: Expo.easeInOut,
+            });
+
+            gsap.from('.login-content', 2, {
+                delay: 1.5,
+                y: 20,
+                opacity: 0,
+                ease: Expo.easeInOut,
+            });
+
+            TweenMax.staggerFrom(
+                '.nav-container',
+                2,
+                {
+                    delay: 1,
+                    opacity: 0,
+                    y: 20,
+                    ease: Expo.easeInOut,
+                },
+                0.1
+            );
+        </script>
+</body>
+</html>

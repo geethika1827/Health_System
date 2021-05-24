@@ -1,0 +1,247 @@
+@charset "ISO-8859-1";
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  background-color: #fdf8f4;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.left-img {
+  width: 40%;
+  padding-right: 10px;
+}
+
+.left-img img {
+  width: 100%;
+}
+
+.right-img {
+  width: 40%;
+  padding-left: 10px;
+}
+
+.right-img img {
+  width: 100%;
+}
+
+.login-container {
+  overflow-x: hidden;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 90vw;
+  max-height: 75vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto auto auto;
+}
+
+.login-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 380px;
+  height: 60vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fdf8f4;
+  padding: 40px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-container form .title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #592cba;
+}
+
+.login-container form label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #919191;
+}
+
+.login-container form input {
+  padding: 12px;
+  width: 200px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  font-weight: 500;
+  color: #333;
+}
+
+.login-container form .username,
+.login-container form .pass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-container form .butt {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: none;
+  width: 160px;
+  height: 35px;
+  border-radius: 15px;
+  background-color: #592cba;
+  outline: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.login-container form .butt:hover {
+  scale: 1.07;
+  background-color: #311675;
+}
+
+.nav-container {
+  height: 15vh;
+  width: 100%;
+  z-index: 500;
+}
+
+nav {
+  width: 82%;
+  margin: 10px auto auto auto;
+  min-height: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+nav span img {
+  height: 5vh;
+  margin-right: 10px;
+}
+
+nav span h1 {
+  font-size: 2rem;
+  color: #311675;
+  font-weight: 800;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  padding: 0px 20px;
+}
+
+nav ul li i {
+  font-size: 1.6rem;
+}
+
+nav ul a {
+  color: #311675;
+  margin-left: 5px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  -webkit-transition: 0s linear;
+  transition: 0s linear;
+}
+
+nav ul a:not(.trans-button):hover {
+  color: #592cba;
+}
+
+nav ul button {
+  color: #311675;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #311675;
+  width: 100px;
+  height: 32px;
+  border-radius: 11px;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+nav ul button:hover {
+  scale: 1.07;
+}
+
+.active {
+  color: #592cba;
+}
+/*# sourceMappingURL=AdminLogin.css.map */

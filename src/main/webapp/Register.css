@@ -1,0 +1,521 @@
+@charset "ISO-8859-1";
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.register {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.register .register-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 90vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.register .register-content .doc-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 41vw;
+  height: 80vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.register .register-content .doc-container h1 {
+  color: #592cba;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.register .register-content .doc-container p {
+  color: #8b8b8b;
+  font-weight: 600;
+  width: 85%;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.register .register-content .doc-container p span {
+  font-size: 1.2rem;
+}
+
+.register .register-content .doc-container .doc-img {
+  width: 100%;
+  height: 55%;
+}
+
+.register .register-content .doc-container .doc-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.register .register-content .user-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 41vw;
+  height: 80vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.register .register-content .user-container h1 {
+  color: #592cba;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.register .register-content .user-container p {
+  color: #8b8b8b;
+  font-weight: 600;
+  width: 85%;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.register .register-content .user-container p span {
+  font-size: 1.2rem;
+}
+
+.register .register-content .user-container .user-img {
+  width: 100%;
+  height: 55%;
+}
+
+.register .register-content .user-container .user-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.register #reg-as {
+  color: #311675;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #311675;
+  width: 300px;
+  height: 35px;
+  border-radius: 11px;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.register #reg-as:hover {
+  scale: 1.07;
+}
+
+.doc-modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.doc-modal-bg .doc-modal {
+  background-color: #fff;
+  position: relative;
+  width: 35%;
+  height: 85%;
+  border-radius: 25px;
+}
+
+.doc-modal-bg .doc-modal .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.doc-modal-bg .doc-modal .close img {
+  width: 22px;
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.doc-modal-bg .doc-modal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding: 25px 0px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #ffff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.doc-modal-bg .doc-modal form .title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #592cba;
+}
+
+.doc-modal-bg .doc-modal form label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #919191;
+}
+
+.doc-modal-bg .doc-modal form input {
+  padding: 12px;
+  width: 230px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  font-weight: 500;
+  color: #333;
+}
+
+.doc-modal-bg .doc-modal form .form-Element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.doc-modal-bg .doc-modal form .register-button {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: none;
+  width: 160px;
+  height: 35px;
+  border-radius: 15px;
+  background-color: #592cba;
+  outline: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.doc-modal-bg .doc-modal form .register-button:hover {
+  scale: 1.07;
+  background-color: #311675;
+}
+
+.doc-modal-bg .doc-modal form a {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.user-modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.user-modal-bg .user-modal {
+  background-color: #fff;
+  position: relative;
+  width: 35%;
+  height: 85%;
+  border-radius: 25px;
+}
+
+.user-modal-bg .user-modal .close_user {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.user-modal-bg .user-modal .close_user img {
+  width: 22px;
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.user-modal-bg .user-modal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  padding: 25px 0px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #ffff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 25px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-modal-bg .user-modal form .title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #592cba;
+}
+
+.user-modal-bg .user-modal form label {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #919191;
+}
+
+.user-modal-bg .user-modal form input {
+  padding: 12px;
+  width: 230px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background-color: #f0f0f0;
+  font-weight: 500;
+  color: #333;
+}
+
+.user-modal-bg .user-modal form .form-Element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 70%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user-modal-bg .user-modal form .register-button {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: none;
+  width: 160px;
+  height: 35px;
+  border-radius: 15px;
+  background-color: #592cba;
+  outline: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.user-modal-bg .user-modal form .register-button:hover {
+  scale: 1.07;
+  background-color: #311675;
+}
+
+.user-modal-bg .user-modal form a {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.modal-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-container {
+  height: 15vh;
+  width: 100%;
+  z-index: 500;
+}
+
+nav {
+  width: 82%;
+  margin: 10px auto auto auto;
+  min-height: 62px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+nav span img {
+  height: 5vh;
+  margin-right: 10px;
+}
+
+nav span h1 {
+  font-size: 2rem;
+  color: #311675;
+  font-weight: 800;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  padding: 0px 20px;
+}
+
+nav ul li i {
+  font-size: 1.6rem;
+}
+
+nav ul a {
+  color: #311675;
+  margin-left: 5px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+nav ul a:hover {
+  scale: 1.1;
+  color: #592cba;
+}
+
+nav ul button {
+  color: #311675;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #311675;
+  width: 100px;
+  height: 32px;
+  border-radius: 11px;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+nav ul button:hover {
+  scale: 1.07;
+}
+/*# sourceMappingURL=Register.css.map */
